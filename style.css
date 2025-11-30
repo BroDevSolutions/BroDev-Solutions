@@ -1,0 +1,776 @@
+/* --- CSS Variables (Dark & Light Mode) --- */
+:root {
+  --bg-color: #0a0a0a;
+  --surface-color: #1a1a1a;
+  --card-color: #222;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --accent-color: #00d4ff; /* Cyan accent */
+  --accent-gradient: linear-gradient(135deg, #00d4ff, #0099cc);
+  --border-color: #333;
+}
+
+body.light-mode {
+  --bg-color: #f4f4f4;
+  --surface-color: #ffffff;
+  --card-color: #ffffff;
+  --text-primary: #121212;
+  --text-secondary: #555;
+  --border-color: #e0e0e0;
+}
+
+/* --- Global Styles & Resets --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: 100px 0;
+}
+
+.section-alt {
+  background-color: var(--surface-color);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 60px;
+  color: var(--text-primary);
+}
+
+.text-gradient {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: var(--accent-gradient);
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(0, 212, 255, 0.4);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-primary);
+}
+.btn-secondary:hover {
+  background-color: var(--card-color);
+}
+
+.btn-outline {
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
+}
+.btn-outline:hover {
+  background-color: var(--accent-color);
+  color: #fff;
+}
+
+.btn-whatsapp {
+  background-color: #25d366;
+  color: #fff;
+  margin-top: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.btn-whatsapp:hover {
+  background-color: #128c7e;
+}
+
+/* --- Header & Navbar --- */
+/* --- Tambahkan atau perbarui bagian-bagian ini di file style.css Anda --- */
+
+/* --- Header & Navbar --- */
+header {
+  background-color: rgba(10, 10, 10, 0.8); /* Sedikit transparan di awal */
+  backdrop-filter: blur(10px);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.4s ease; /* Tambahkan transisi yang halus */
+  padding: 0; /* Padding awal */
+}
+body.light-mode header {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Style baru untuk navbar saat di-scroll */
+header.scrolled {
+  background-color: var(--surface-color); /* Menjadi solid */
+  box-shadow: 0 5px 20px var(--shadow-color); /* Tambahkan bayangan */
+  padding: 0; /* Padding bisa disesuaikan jika ingin lebih kecil */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px; /* Tinggi navbar tetap */
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+  position: relative; /* Diperlukan untuk efek ::after */
+}
+.nav-links a:hover {
+  color: var(--accent-color);
+}
+
+/* Style baru untuk link yang sedang aktif */
+.nav-links a.active-link {
+  color: var(--accent-color);
+}
+.nav-links a.active-link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent-color);
+  bottom: -5px; /* Posisi garis bawah */
+  left: 0;
+  border-radius: 2px;
+}
+
+/* nav indicator that follows the active link */
+.nav-indicator {
+  position: absolute;
+  bottom: -10px; /* sits slightly below links; adjust if needed */
+  height: 4px;
+  width: 0;
+  left: 0;
+  border-radius: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  transition: left 260ms cubic-bezier(0.2, 0.9, 0.3, 1),
+    width 260ms cubic-bezier(0.2, 0.9, 0.3, 1), transform 260ms;
+  transform-origin: center;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* when nav link gets active we also slightly lift the link text for a nicer effect */
+.nav-links a.active {
+  transform: translateY(-2px);
+  transition: transform 220ms;
+}
+
+/* adjust indicator bottom when header is scrolled (if needed) */
+header.scrolled .nav-indicator {
+  bottom: -8px;
+}
+
+/* --- Dark Mode Toggle --- */
+.theme-toggle {
+  width: 60px;
+  height: 30px;
+  background-color: var(--card-color);
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5px;
+}
+.theme-toggle i {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+body.light-mode .theme-toggle .fa-sun {
+  opacity: 1;
+}
+body:not(.light-mode) .theme-toggle .fa-moon {
+  opacity: 1;
+}
+body:not(.light-mode) .theme-toggle .fa-sun,
+body.light-mode .theme-toggle .fa-moon {
+  opacity: 0.4;
+}
+
+/* --- Hamburger Menu --- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-primary);
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
+/* --- Hero Section --- */
+.hero {
+  padding: 150px 0 100px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+.hero-text h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+.hero-text p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+}
+.cta-buttons .btn {
+  margin-right: 15px;
+}
+.hero-visual {
+  position: relative;
+  height: 500px;
+}
+.floating-card {
+  position: absolute;
+  background-color: var(--card-color);
+  border: 1px solid var(--border-color);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  animation: float 6s ease-in-out infinite;
+}
+.floating-card i {
+  font-size: 2rem;
+  color: var(--accent-color);
+}
+.card-1 {
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+.card-2 {
+  top: 40%;
+  right: 10%;
+  animation-delay: 2s;
+}
+.card-3 {
+  bottom: 10%;
+  left: 20%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* --- Services Section --- */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+.service-card {
+  background-color: var(--card-color);
+  border: 1px solid var(--border-color);
+  padding: 40px 30px;
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent-color);
+}
+.card-icon {
+  font-size: 3rem;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+}
+.service-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+.service-card p {
+  color: var(--text-secondary);
+}
+
+/* --- Portfolio Section --- */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+.portfolio-item {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.portfolio-item img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 30px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
+}
+.portfolio-item:hover img {
+  transform: scale(1.1);
+}
+.portfolio-overlay h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.portfolio-overlay a {
+  color: var(--accent-color);
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+/* --- Pricing Section --- */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+.pricing-card {
+  background-color: var(--card-color);
+  border: 1px solid var(--border-color);
+  border-radius: 15px;
+  padding: 40px 30px;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.pricing-card:hover {
+  transform: translateY(-10px);
+}
+.pricing-card.featured {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+}
+.pricing-card .badge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent-gradient);
+  color: #fff;
+  padding: 5px 20px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.pricing-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.price {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 30px;
+}
+.price span {
+  font-size: 1rem;
+  vertical-align: super;
+}
+.pricing-card ul {
+  list-style: none;
+  margin-bottom: 30px;
+  text-align: left;
+}
+.pricing-card ul li {
+  margin-bottom: 15px;
+  color: var(--text-secondary);
+}
+.pricing-card ul li i.fa-check {
+  color: var(--accent-color);
+  margin-right: 10px;
+}
+
+/* --- Contact Section --- */
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.contact-info h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.contact-info p {
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 15px;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  font-family: "Inter", sans-serif;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--text-secondary);
+}
+.contact-form button {
+  width: 100%;
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 40px 0;
+  border-top: 1px solid var(--border-color);
+}
+footer p {
+  color: var(--text-secondary);
+}
+
+/* --- Scroll Reveal Animation --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-visual {
+    display: none;
+  } /* Hide complex visual on smaller screens */
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  .nav-links {
+    position: fixed;
+    left: -100%;
+    top: 80px;
+    flex-direction: column;
+    background-color: var(--surface-color);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.5);
+    padding: 20px 0;
+  }
+  .nav-links.active {
+    left: 0;
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+  .cta-buttons .btn {
+    margin-bottom: 15px;
+  }
+  .pricing-card.featured {
+    transform: scale(1);
+  }
+}
+
+/* --- Tambahkan CSS ini di bagian bawah file style.css Anda --- */
+
+/* --- Interactive Pricing Section --- */
+.pricing-container {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.package-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.package-item {
+  background-color: var(--card-color);
+  border: 1px solid var(--border-color);
+  padding: 20px 25px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.package-item:hover {
+  border-color: var(--accent-color);
+}
+
+.package-item.active {
+  background: var(--accent-gradient);
+  border-color: transparent;
+  color: #fff;
+}
+.package-item.active h4,
+.package-item.active p {
+  color: #fff;
+}
+
+.package-item h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--text-primary);
+}
+
+.package-item p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.package-item .price-tag {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+.package-item.active .price-tag {
+  color: #fff;
+}
+
+.package-details {
+  background-color: var(--card-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 40px;
+}
+.package-details h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.package-details .package-description {
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+  line-height: 1.7;
+}
+.package-details ul {
+  list-style: none;
+  margin-bottom: 30px;
+}
+.package-details ul li {
+  margin-bottom: 15px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: flex-start;
+}
+.package-details ul li i {
+  color: var(--accent-color);
+  margin-right: 10px;
+  margin-top: 4px;
+}
+.package-details .package-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+.package-details .package-meta .final-price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+.package-details .package-meta .final-price span {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+/* --- FAQ Section --- */
+.faq-section {
+  margin-top: 80px;
+}
+.faq-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+  color: var(--text-primary);
+}
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.faq-item {
+  background-color: var(--card-color);
+  border: 1px solid var(--border-color);
+  margin-bottom: 15px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.faq-question {
+  padding: 20px 25px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+.faq-question:hover {
+  background-color: var(--surface-color);
+}
+.faq-question h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.faq-question i {
+  color: var(--text-secondary);
+  transition: transform 0.3s ease;
+}
+.faq-item.active .faq-question i {
+  transform: rotate(180deg);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+.faq-answer p {
+  padding: 0 25px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+.faq-item.active .faq-answer {
+  max-height: 500px; /* Adjust as needed */
+  padding: 0 25px 20px 25px;
+}
+
+/* --- Responsive Design Update --- */
+@media (max-width: 992px) {
+  .pricing-container {
+    grid-template-columns: 1fr;
+  }
+  .package-list {
+    order: 2; /* Show details on top on mobile */
+  }
+  .package-details {
+    order: 1;
+  }
+}

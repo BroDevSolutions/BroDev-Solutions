@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BroDev Solutions - Modern Web Development</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Font Awesome untuk Ikon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <!-- Google Fonts (Inter) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="container">
+        <a href="#" class="logo">BroDev</a>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Layanan</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#pricing">Harga</a></li>
+          <li><a href="#contact">Kontak</a></li>
+          <!-- added: moving indicator that follows active link -->
+          <span class="nav-indicator" aria-hidden="true"></span>
+        </ul>
+        <div class="theme-toggle">
+          <i class="fas fa-sun"></i>
+          <i class="fas fa-moon"></i>
+        </div>
+        <div class="hamburger">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="home" class="hero" data-nav-theme="accent">
+        <div class="container hero-content">
+          <div class="hero-text">
+            <h1 class="reveal">
+              Kami Buat <span class="text-gradient">Website</span> yang Tidak
+              Hanya Keren, Tapi Juga Menghasilkan.
+            </h1>
+            <p class="reveal">
+              Solusi pengembangan web, UI/UX, dan IT yang inovatif untuk membawa
+              bisnis Anda ke level berikutnya.
+            </p>
+            <div class="cta-buttons reveal">
+              <a href="#" id="cta-hire-me" class="btn btn-primary"
+                >Mulai Proyek</a
+              >
+              <a href="#portfolio" class="btn btn-secondary btn-outline"
+                >Lihat Karya Kami</a
+              >
+            </div>
+          </div>
+          <div class="hero-visual reveal">
+            <div class="floating-card card-1">
+              <i class="fas fa-code"></i>
+              <p>Web Development</p>
+            </div>
+            <div class="floating-card card-2">
+              <i class="fas fa-paint-brush"></i>
+              <p>UI/UX Design</p>
+            </div>
+            <div class="floating-card card-3">
+              <i class="fas fa-rocket"></i>
+              <p>High Performance</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="container section" data-nav-theme="dark">
+        <h2 class="section-title reveal">Layanan Unggulan Kami</h2>
+        <div class="services-grid">
+          <div class="service-card reveal">
+            <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
+            <h3>Pengembangan Website Kustom</h3>
+            <p>
+              Membangun website dari nol yang sepenuhnya disesuaikan dengan
+              brand dan tujuan bisnis Anda.
+            </p>
+          </div>
+          <div class="service-card reveal">
+            <div class="card-icon"><i class="fas fa-mobile-alt"></i></div>
+            <h3>Aplikasi Web (Web App)</h3>
+            <p>
+              Mengembangkan aplikasi web yang kompleks dan powerful untuk solusi
+              bisnis Anda.
+            </p>
+          </div>
+          <div class="service-card reveal">
+            <div class="card-icon"><i class="fas fa-palette"></i></div>
+            <h3>Desain UI/UX</h3>
+            <p>
+              Merancang antarmuka yang intuitif dan pengalaman pengguna yang tak
+              terlupakan.
+            </p>
+          </div>
+          <div class="service-card reveal">
+            <div class="card-icon"><i class="fas fa-tachometer-alt"></i></div>
+            <h3>Optimasi & Kecepatan</h3>
+            <p>
+              Memastikan website Anda berjalan super cepat, SEO-friendly, dan
+              aman.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portfolio Section -->
+      <section id="portfolio" class="section section-alt" data-nav-theme="dark">
+        <div class="container">
+          <h2 class="section-title reveal">Portfolio Terbaru</h2>
+          <div class="portfolio-grid">
+            <div class="portfolio-item reveal">
+              <img
+                src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=1200&q=80"
+                alt="E-Commerce Platform"
+              />
+              <div class="portfolio-overlay">
+                <h3>Platform E-Commerce</h3>
+                <p>
+                  Marketplace lengkap dengan keranjang, checkout, dan dashboard
+                  manajemen produk.
+                </p>
+                <a href="#" target="_blank"
+                  >Lihat Detail <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+
+            <div class="portfolio-item reveal">
+              <img
+                src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=1200&q=80"
+                alt="Website Sekolah"
+              />
+              <div class="portfolio-overlay">
+                <h3>Website Sekolah</h3>
+                <p>
+                  Sistem informasi sekolah dengan halaman admin, berita, galeri,
+                  dan manajemen siswa.
+                </p>
+                <a
+                  href="https://contohwebsekolah.infinityfreeapp.com/"
+                  target="_blank"
+                  >Lihat Detail <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+
+            <div class="portfolio-item reveal">
+              <img
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80"
+                alt="Portofolio Pribadi"
+              />
+              <div class="portfolio-overlay">
+                <h3>Portofolio Pribadi</h3>
+                <p>
+                  Website personal yang menampilkan proyek, pengalaman, dan
+                  kontak profesional.
+                </p>
+                <a href="#" target="_blank"
+                  >Lihat Detail <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+
+            <div class="portfolio-item reveal">
+              <img
+                src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"
+                alt="Web Wisata"
+              />
+              <div class="portfolio-overlay">
+                <h3>Web Wisata</h3>
+                <p>
+                  Portal destinasi wisata dengan peta, paket tur, galeri foto,
+                  dan pemesanan online.
+                </p>
+                <a
+                  href="https://brodevsolutions.github.io/Web-Wisata/"
+                  target="_blank"
+                  >Lihat Detail <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+
+            <div class="portfolio-item reveal">
+              <img
+                src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1200&q=80"
+                alt="Web Kelas / E-Learning"
+              />
+              <div class="portfolio-overlay">
+                <h3>Web Kelas Pribadi</h3>
+                <p>
+                  Website kelas yang menampilkan struktur kelas dan berbagai
+                  informasi kelas serta anggota kelas lainya.
+                </p>
+                <a
+                  href="https://brodevsolutions.github.io/Web-Kelas/"
+                  target="_blank"
+                  >Lihat Detail <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEW Interactive Pricing Section -->
+      <section id="pricing" class="section" data-nav-theme="accent">
+        <div class="container">
+          <h2 class="section-title reveal">Paket Harga & Layanan</h2>
+          <div class="pricing-container reveal">
+            <div class="package-list">
+              <!-- Items will be dynamically generated by JS -->
+            </div>
+            <div class="package-details">
+              <!-- Details will be dynamically generated by JS -->
+            </div>
+          </div>
+
+          <!-- FAQ Section -->
+          <div class="faq-section reveal">
+            <h3 class="faq-title">Pertanyaan yang Sering Diajukan (FAQ)</h3>
+            <div class="faq-list">
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h4>Apa saja yang saya dapatkan setelah website selesai?</h4>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    Anda akan mendapatkan file source code lengkap, dokumentasi
+                    penggunaan (untuk CMS), panduan dasar SEO, dan garansi
+                    selama periode yang disepakati.
+                  </p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h4>Apakah biaya sudah termasuk domain dan hosting?</h4>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    Biaya paket adalah untuk jasa pembuatan website. Domain dan
+                    hosting adalah biaya terpisah yang biasanya dikenakan per
+                    tahun. Namun, kami dapat membantu Anda dalam proses
+                    pembelian dan pengaturannya.
+                  </p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h4>Bagaimana sistem pembayarannya?</h4>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    Umumnya, kami menggunakan sistem pembayaran bertahap: 50% di
+                    awal sebagai DP (Down Payment) dan 50% lagi setelah proyek
+                    selesai dan disetujui.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="section section-alt" data-nav-theme="light">
+        <div class="container">
+          <h2 class="section-title reveal">Mari Diskusikan Proyek Anda</h2>
+          <div class="contact-wrapper reveal">
+            <div class="contact-info">
+              <h3>Siap memulai?</h3>
+              <p>
+                Kami siap mendengarkan ide Anda dan mengubahnya menjadi
+                kenyataan. Hubungi kami untuk konsultasi gratis.
+              </p>
+              <a href="#" id="contact-wa-btn" class="btn btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> Chat di WhatsApp
+              </a>
+            </div>
+            <div class="contact-form">
+              <form id="contact-form">
+                <input type="text" placeholder="Nama Lengkap" required />
+                <input type="email" placeholder="Email Aktif" required />
+                <textarea
+                  placeholder="Ceritakan tentang proyek Anda..."
+                  rows="5"
+                  required
+                ></textarea>
+                <button type="submit" class="btn btn-primary">
+                  Kirim via WhatsApp
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 BroDev Solutions.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
