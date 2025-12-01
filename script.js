@@ -4,23 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // --- DATA FOR PACKAGES ---
   const packages = [
     {
-      id: "E-Commerce",
-      name: "Toko Online (E-Commerce)",
-      description:
-        "Platform toko online lengkap dengan sistem keranjang, checkout WhatsApp, dan dashboard admin.",
-      price: "Rp 100.000 - Rp 500.000",
-      time: "1 Minggu - 1 Bulan",
-      features: [
-        "Halaman produk",
-        "Keranjang belanja",
-        "Checkout WhatsApp",
-        "Struk pesanan",
-        "Dashboard admin",
-        "Manajemen produk",
-        "Responsive web",
-      ],
-    },
-    {
       id: "Website_sekolah",
       name: "Website Sekolah",
       description:
@@ -40,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
       name: "Portfolio Pribadi",
       description:
         "Website portfolio modern untuk menampilkan keahlian, project, dan kontak profesional.",
-      price: "Rp 100.000 - Rp 500.000",
+      price: "Rp 100.000 - Rp 300.000",
       time: "1 Minggu - 1 Bulan",
       features: [
         "Halaman profil",
@@ -55,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
       name: "Website Wisata",
       description:
         "Website destinasi wisata dengan informasi lokasi, galeri, dan harga tiket.",
-      price: "Rp 100.000 - Rp 500.000",
+      price: "Rp 100.000 - Rp 300.000",
       time: "1 Minggu - 1 Bulan",
       features: [
         "Halaman informasi wisata",
@@ -63,21 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
         "Informasi harga tiket",
         "Lokasi maps",
         "Responsive & cepat",
-      ],
-    },
-    {
-      id: "website_kelas_pribadi",
-      name: "Website Kelas",
-      description:
-        "Website kelas menampilkan struktur kelas, jadwal, piket, galeri, dan anggota.",
-      price: "Rp 100.000",
-      time: "1 - 2 Minggu",
-      features: [
-        "Anggota kelas",
-        "Jadwal pelajaran",
-        "Piket mingguan",
-        "Galeri foto",
-        "Responsive",
       ],
     },
     {
